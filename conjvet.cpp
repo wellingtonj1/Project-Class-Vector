@@ -58,3 +58,47 @@ void conjvet::uniao(conjvet x,conjvet y)
       tamanhovet = k;
 }
 
+void conjvet::intersec(conjvet x, conjvet y)
+{
+    int i,j,newsize = 0;
+	for(i=0;i<x.tamanhovet;i++)
+	{
+		for(j=0;j<y.tamanhovet;j++)
+		{
+			if(x.vetor[i] == y.vetor[j])
+			{
+				vetor[newsize++] = x.vetor[i];
+			}
+		}
+	}
+	 tamanhovet = newsize;
+}
+void conjvet::menas(conjvet x, conjvet y)
+{
+    int i,j,newsize = 0;
+	for(i=0;i<x.tamanhovet;i++)
+	{
+		for(j=0;j<y.tamanhovet && x.vetor[i] != y.vetor[j]; j++);
+		 {
+		 }
+		 if(j == y.tamanhovet)
+		 {
+		   vetor[newsize++] = x.vetor[i];
+		 }
+	}
+    tamanhovet=newsize;
+}
+
+int conjvet::escalar(conjvet x, conjvet y)
+{
+    int i,somaescalar;
+	if(x.tamanhovet==y.tamanhovet)
+	{
+		for(somaescalar=0,i=0;i<x.tamanhovet;i++)
+		{
+			 somaescalar += x.vetor[i] * y.vetor[i];
+		}
+		return somaescalar;
+	}
+	return 0;
+}
