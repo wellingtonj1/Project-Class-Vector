@@ -16,6 +16,9 @@ public:
     void impvet();
     bool vazio();
     void uniao(conjvet x,conjvet y);
+    void intersec(conjvet x,conjvet y);
+    void menas(conjvet x, conjvet y);
+    int escalar(conjvet x, conjvet y);
 
 
 };
