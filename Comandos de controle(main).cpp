@@ -71,6 +71,24 @@ int main()
 
     cout<< "\n A uniao entre A e B é == " ; aux.impvet();
 
+    //intersecção
+
+    aux.intersec(p1,p2);
+    cout<< "\n A diferença entre A e B é == " ; aux.impvet();
+
+    //subtração de conjuntos
+    aux.menas(p1,p2);
+    cout<< "\n O conjunto A-B == " ; aux.impvet();
+    //sub ao contrario
+    aux.menas(p2,p1);
+    cout<< "\n O conjunto B-A == " ; aux.impvet();
+
+    //Produto escalar dos conjuntos
+    aux.escalar(p1,p2);
+    cout<< "\n O Produto escalar entre A e B == " ; aux.impvet();
+
+
+
 
 
 }
