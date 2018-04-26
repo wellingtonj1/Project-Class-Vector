@@ -25,9 +25,7 @@ while(continua=="s")
     cout<<"Digite 9 para { Descobrir se A e B sao conjuntos disjuntos }\n";
     cout<<"Digite 10 para { Amplitude de A e B }\n";
     cout<<"Digite 11 para { Produto escalar entre A e B }\n";
-    cout<<"Digite 12 para { Maior subcadeia de forma crescente ordenada em A }\n";
-    cout<<"Digite 13 para { Maior subcadeia de forma decrescente ordenada em B }\n";
-    cout<<"Digite 14 para { Intercalar A e B de forma ordenada }\n";
+
     cout<<"\nDigite a operação que você deseja realizar : ";
 
     cin>>escolha;
