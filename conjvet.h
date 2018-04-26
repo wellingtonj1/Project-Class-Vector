@@ -1,7 +1,6 @@
-//                         !!!!!!!      IN CONSTRUCTION !!!!!!!
+
 #ifndef CONJVET_H
 #define CONJVET_H
-#include <string>
 #include <iostream>
 
 class conjvet
@@ -23,7 +22,7 @@ public:
     bool conjiden(conjvet x, conjvet y);
     bool disjunt(conjvet x, conjvet y);
     int ampl(conjvet x, conjvet y);
-
+	~conjvet();
 
 };
 #endif
