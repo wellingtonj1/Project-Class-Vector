@@ -1,3 +1,4 @@
+//                         !!!!!!!      IN CONSTRUCTION !!!!!!!
 #ifndef CONJVET_H
 #define CONJVET_H
 #include <string>
@@ -21,6 +22,8 @@ public:
     bool subconj(conjvet x, conjvet y);
     bool conjiden(conjvet x, conjvet y);
     bool disjunt(conjvet x, conjvet y);
+    int ampl(conjvet x, conjvet y);
+
 
 };
 #endif
