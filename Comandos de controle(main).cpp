@@ -14,16 +14,16 @@ int main()
 while(continua=="s")
 {
         cout<<"-----------------------------------------Trabalho de Conjuntos .By JaPaCoDeR! -----------------------------------------\n\n";
-    cout<<"Digite 1 para { Descobrir se os conjuntos sao vazios }\n";
+    cout<<"Digite 1 para { Descobrir se os conjuntos são vazios }\n";
     cout<<"Digite 2 para { A união B }\n";
     cout<<"Digite 3 para { A intersecção B }\n";
-    cout<<"Digite 4 para { A - B }\n";
-    cout<<"Digite 5 para { B - A }\n";
-    cout<<"Digite 6 para { Descobrir se A e subconjunto de B }\n";
-    cout<<"Digite 7 para { Descobrir se B e subconjunto de A }\n";
-    cout<<"Digite 8 para { Descobrir se A e B sao conjuntos identicos }\n";
-    cout<<"Digite 9 para { Descobrir se A e B sao conjuntos disjuntos }\n";
-    cout<<"Digite 10 para { Amplitude de A e B }\n";
+    cout<<"Digite 4 para { A - B } \n";
+    cout<<"Digite 5 para { B - A } \n";
+    cout<<"Digite 6 para { Descobrir se A é subconjunto de B }\n";
+    cout<<"Digite 7 para { Descobrir se B é subconjunto de A }\n";
+    cout<<"Digite 8 para { Descobrir se A é B sao conjuntos identicos }\n";
+    cout<<"Digite 9 para { Descobrir se A é B sao conjuntos disjuntos }\n";
+    cout<<"Digite 10 para { Amplitude de A é B }\n";
     cout<<"Digite 11 para { Produto escalar entre A e B }\n";
 
     cout<<"\nDigite a operação que você deseja realizar : ";
@@ -202,6 +202,15 @@ while(continua=="s")
     break;
     }
 
+    case 10:
+    {
+    cout<< "\n A amplitude de A e B é : "<<aux.ampl(p1,p2)<<endl;
+
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
     //Produto escalar dos conjuntos
     case 11:
     {
