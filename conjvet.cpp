@@ -102,3 +102,70 @@ int conjvet::escalar(conjvet x, conjvet y)
 	}
 	return 0;
 }
+
+bool conjvet::subconj(conjvet x, conjvet y)
+{
+    int i,j;
+    int cont=0;
+	for(i=0;i<x.tamanhovet;i++)
+	{
+	  for(j=0;j<y.tamanhovet;j++)
+	  {
+	    if(x.vetor[i] == y.vetor[j])
+	    {
+		  cont++;
+	    }
+	  }
+	}
+    tamanhovet = cont;
+	if(cont == tamanhovet)
+	{
+		return true;
+	}
+	else
+    {
+	    return false;
+    }
+}
+
+bool conjvet::conjiden(conjvet x, conjvet y)
+{
+   int i,j;
+   int conta=0;
+   if(x.tamanhovet == y.tamanhovet)
+   {
+	for(i=0;i<x.tamanhovet;i++)
+	{
+		for(j=0;j<y.tamanhovet;j++)
+		{
+			if(x.vetor[i] == y.vetor[j])
+			{
+				conta++;
+			}
+	    }
+	}
+        tamanhovet = conta;
+        if(conta == tamanhovet)
+        {
+        return true;
+        }
+    }
+
+    return false;
+}
+
+bool conjvet::disjunt(conjvet x, conjvet y)
+{
+    int i,j;
+	for(i=0;i<x.tamanhovet;i++)
+	{
+		for(j=0;j<y.tamanhovet;j++)
+		{
+			if(x.vetor[i] == y.vetor[j])
+			{
+				return false;
+			}
+	    }
+	}
+	return true;
+}
