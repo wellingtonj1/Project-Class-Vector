@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string>
+
 
 using namespace std;
 
@@ -109,23 +109,27 @@ bool conjvet::subconj(conjvet x, conjvet y)
     int cont=0;
 	for(i=0;i<x.tamanhovet;i++)
 	{
-	  for(j=0;j<y.tamanhovet;j++)
+	  for(j=0;j<y.tamanhovet && x.vetor[i]!=y.vetor[j];j++)
 	  {
-	    if(x.vetor[i] == y.vetor[j])
-	    {
-		  cont++;
-	    }
+	  }
+	  if(j==y.tamanhovet)
+	  {
+		return false;
+	  }
+	  else 
+	  {
+	  cont++;
 	  }
 	}
-    tamanhovet = cont;
-	if(cont == tamanhovet)
+	
+	if(cont==x.tamanhovet)
 	{
 		return true;
 	}
 	else
-    {
-	    return false;
-    }
+	{ 
+		return false;
+	}
 }
 
 bool conjvet::conjiden(conjvet x, conjvet y)
@@ -191,4 +195,9 @@ int conjvet::ampl(conjvet x, conjvet y)
 	}
 
 	return maior - menor;
+}
+
+conjvet::~conjvet()
+{
+	delete []vetor;
 }
