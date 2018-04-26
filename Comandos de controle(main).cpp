@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include "conjvet.h"
 #include "conjvet.cpp"
 
@@ -6,10 +7,33 @@ using namespace std;
 
 int main()
 {
-    int tamanhoconjunto,tamanhoconjunto2;
-    bool maior=true;
+    int tamanhoconjunto,tamanhoconjunto2,escolha;
+    bool maior;
+    string continua="s";
+
+while(continua=="s")
+{
+        cout<<"-----------------------------------------Trabalho de Conjuntos .By JaPaCoDeR! -----------------------------------------\n\n";
+    cout<<"Digite 1 para { Descobrir se os conjuntos sao vazios }\n";
+    cout<<"Digite 2 para { A união B }\n";
+    cout<<"Digite 3 para { A intersecção B }\n";
+    cout<<"Digite 4 para { A - B }\n";
+    cout<<"Digite 5 para { B - A }\n";
+    cout<<"Digite 6 para { Descobrir se A e subconjunto de B }\n";
+    cout<<"Digite 7 para { Descobrir se B e subconjunto de A }\n";
+    cout<<"Digite 8 para { Descobrir se A e B sao conjuntos identicos }\n";
+    cout<<"Digite 9 para { Descobrir se A e B sao conjuntos disjuntos }\n";
+    cout<<"Digite 10 para { Amplitude de A e B }\n";
+    cout<<"Digite 11 para { Produto escalar entre A e B }\n";
+    cout<<"Digite 12 para { Maior subcadeia de forma crescente ordenada em A }\n";
+    cout<<"Digite 13 para { Maior subcadeia de forma decrescente ordenada em B }\n";
+    cout<<"Digite 14 para { Intercalar A e B de forma ordenada }\n";
+    cout<<"\nDigite a operação que você deseja realizar : ";
+
+    cin>>escolha;
 
     cout << "\t Digite o tamanho do primeiro conjunto : " ;
+    maior=true;
     while(maior==true)
     {
     cin>>tamanhoconjunto;
@@ -22,8 +46,6 @@ int main()
      cout << "\t Digite o tamanho do primeiro conjunto : " ;
     }
     }
-
-
     cout<< "\t Digite o tamanho do segundo conjunto : " ;
     maior= true;
     while(maior==true)
@@ -39,7 +61,6 @@ int main()
     }
     }
 
-
     conjvet p1(tamanhoconjunto), p2(tamanhoconjunto2), aux(tamanhoconjunto+tamanhoconjunto2);
     cout << "\n Digite os valores do conjunto A : ";
     //Digitar o vetor
@@ -48,47 +69,163 @@ int main()
     cout<< "\n Digite os valores do conjunto B : ";
     p2.lervet();
 
-    //vazio
-    if(p1.vazio())
+    switch(escolha)
     {
-        cout<<"\n O conjunto A é vazio !!! ";
-    }
-    else
-    {
-        cout<<"\n O conjunto A não é vazio !!! ";
-    }
-    if(p2.vazio())
-    {
-        cout<<"\n O conjunto B é vazio !!! ";
-    }
-    else
-    {
-        cout<<"\n O conjunto B não é vazio !!! ";
-    }
+        case 1:
+        {
+            if(p1.vazio())
+            {
+            cout<<"\n O conjunto A é vazio !!! ";
+            }
+            else
+            {
+            cout<<"\n O conjunto A não é vazio !!! ";
+            }
+            if(p2.vazio())
+            {
+            cout<<"\n O conjunto B é vazio !!! ";
+            }
+            else
+            {
+            cout<<"\n O conjunto B não é vazio !!! ";
+            }
+            cout<<"\n Desejas continuar ? Se sim digite s : " ;
+            cin>>continua;
+            system("cls");
+            break;
+        }
     //uniao vets
-
+    case 2:
+    {
     aux.uniao(p1,p2);
-
     cout<< "\n A uniao entre A e B é == " ; aux.impvet();
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
 
     //intersecção
-
+    case 3:
+    {
     aux.intersec(p1,p2);
     cout<< "\n A diferença entre A e B é == " ; aux.impvet();
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
 
     //subtração de conjuntos
+    case 4:
+    {
     aux.menas(p1,p2);
     cout<< "\n O conjunto A-B == " ; aux.impvet();
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
+
     //sub ao contrario
+    case 5:
+    {
     aux.menas(p2,p1);
     cout<< "\n O conjunto B-A == " ; aux.impvet();
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
+
+    case 6:
+    {
+        if(aux.subconj(p1,p2))
+        {
+        cout<< "\n A é subconjunto de B ! " <<endl;
+        }
+        else
+        {
+        cout<< "\n A não é subconjunto de B ! " <<endl;
+        }
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+
+    }
+
+    case 7:
+    {
+        if(aux.subconj(p2,p1))
+        {
+        cout<< "\n B é subconjunto de A ! " <<endl;
+        }
+        else
+        {
+        cout<< "\n B não é subconjunto de A ! " <<endl;
+        }
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
+
+    case 8:
+    {
+        if(aux.conjiden(p1,p2))
+        {
+            cout << "\n São identicos ! "<<endl;
+        }
+        else
+        {
+            cout<< "\n Não são identicos ! " <<endl;
+        }
+
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
+
+    case 9:
+    {
+        if(aux.disjunt(p1,p2))
+        {
+            cout<< "\n São disjuntos ! "<< endl ;
+        }
+        else
+        {
+            cout<< "\n Não são disjuntos ! "<< endl ;
+        }
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
 
     //Produto escalar dos conjuntos
+    case 11:
+    {
     aux.escalar(p1,p2);
     cout<< "\n O Produto escalar entre A e B == " ; aux.impvet();
+    cout<<"\n Desejas continuar ? Se sim digite s : " ;
+    cin>>continua;
+    system("cls");
+    break;
+    }
+
+        default:
+        {
+        cout<<"\n Querido usuario digite um numero valido ou vá tomar no seu cuca ! '_' ! ";
+        cout<<"\n Desejas continuar ? Se sim digite s : " ;
+        cin>>continua;
+        system("cls");
+        break;
+        }
 
 
 
-
-
+}
+}
 }
