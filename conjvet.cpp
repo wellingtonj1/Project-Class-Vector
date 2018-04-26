@@ -169,3 +169,26 @@ bool conjvet::disjunt(conjvet x, conjvet y)
 	}
 	return true;
 }
+
+int conjvet::ampl(conjvet x, conjvet y)
+{
+    int i,maior=0;
+    int menor = x.vetor[0];
+	for(i=0;i<x.tamanhovet;i++)
+	{
+		if(x.vetor[i] > maior)
+		{
+			maior = x.vetor[i];
+		}
+	}
+
+	for(i=1;i<x.tamanhovet;i++)
+	{
+		if(x.vetor[i] < menor)
+		{
+			menor = x.vetor[i];
+		}
+	}
+
+	return maior - menor;
+}
