@@ -1,4 +1,3 @@
-//                         !!!!!!!      IN CONSTRUCTION !!!!!!!
 #ifndef CONJVET_H
 #define CONJVET_H
 #include <string>
@@ -19,7 +18,9 @@ public:
     void intersec(conjvet x,conjvet y);
     void menas(conjvet x, conjvet y);
     int escalar(conjvet x, conjvet y);
-
+    bool subconj(conjvet x, conjvet y);
+    bool conjiden(conjvet x, conjvet y);
+    bool disjunt(conjvet x, conjvet y);
 
 };
 #endif
