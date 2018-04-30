@@ -116,18 +116,18 @@ bool conjvet::subconj(conjvet x, conjvet y)
 	  {
 		return false;
 	  }
-	  else 
+	  else
 	  {
 	  cont++;
 	  }
 	}
-	
+
 	if(cont==x.tamanhovet)
 	{
 		return true;
 	}
 	else
-	{ 
+	{
 		return false;
 	}
 }
@@ -136,9 +136,7 @@ bool conjvet::conjiden(conjvet x, conjvet y)
 {
    int i,j;
    int conta=0;
-   if(x.tamanhovet == y.tamanhovet)
-   {
-	for(i=0;i<x.tamanhovet;i++)
+	for(i=0;i<x.tamanhovet&&x.tamanhovet == y.tamanhovet;i++)
 	{
 		for(j=0;j<y.tamanhovet;j++)
 		{
@@ -153,10 +151,11 @@ bool conjvet::conjiden(conjvet x, conjvet y)
         {
         return true;
         }
-    }
 
-    return false;
+
 }
+
+
 
 bool conjvet::disjunt(conjvet x, conjvet y)
 {
