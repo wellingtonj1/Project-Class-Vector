@@ -1,4 +1,3 @@
-
 #ifndef CONJVET_H
 #define CONJVET_H
 #include <iostream>
