@@ -36,7 +36,7 @@ int main()
 		{
 			cin>>tamanhoconjunto;
 			if(tamanhoconjunto>=0)
-			{ 
+			{
 				maior=false;
 			}
 			else
@@ -51,7 +51,7 @@ int main()
 		{
 			cin>>tamanhoconjunto2;
 			if(tamanhoconjunto2>=0)
-			{ 
+			{
 				maior=false;
 			}
 			else
@@ -196,7 +196,7 @@ int main()
 			{
 				aux.escalar(p1,p2);
 				cout<< "\n O Produto escalar entre A e B == " ; aux.impvet();
-				
+
 				break;
 			}
 
@@ -213,5 +213,6 @@ int main()
 		cout<<"\n Desejas continuar ? Se sim digite s : " ;
 		cin>>continua;
 		system("clear");
+        system("cls");
 	}
 }
