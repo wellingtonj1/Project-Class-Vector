@@ -3,30 +3,38 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <vector>
 
 using namespace std;
 
 conjvet::conjvet(int tama)
 {
-    tamanhovet=tama;
+    tamanhovet=tamacopia=tama;
     vetor=new int[tamanhovet];
+   
+    
 }
 
 void conjvet::lervet()
-{
+{		
         for(int i=0;i<tamanhovet;i++)
         {
-         cin>>vetor[i];
+		cin>>vetor[i];
         }
 }
 
 void conjvet::impvet()
-{
-     for(int i=0;i<tamanhovet;i++)
-        {
-         cout<< vetor[i] << " " ;
-        }
+{		
+	 int tamacop=tamanhovet;
+     for(int i=0;i<tamacop;i++)
+     {
+		cout<< vetor[i];
+		if(i<tamacop-1)
+		{
+			cout<< " -- " ;
+		}
+     }
+        
 }
 
 bool conjvet::vazio()
@@ -136,7 +144,7 @@ bool conjvet::conjiden(conjvet x, conjvet y)
 {
    int i,j;
    int conta=0;
-	for(i=0;i<x.tamanhovet&&x.tamanhovet == y.tamanhovet;i++)
+	for(i=0;i<x.tamanhovet && x.tamanhovet == y.tamanhovet;i++)
 	{
 		for(j=0;j<y.tamanhovet;j++)
 		{
@@ -147,15 +155,12 @@ bool conjvet::conjiden(conjvet x, conjvet y)
 	    }
 	}
         tamanhovet = conta;
-        if(conta == tamanhovet)
+        if(tamanhovet == x.tamanhovet)
         {
         return true;
         }
-
-
+        return false;
 }
-
-
 
 bool conjvet::disjunt(conjvet x, conjvet y)
 {
