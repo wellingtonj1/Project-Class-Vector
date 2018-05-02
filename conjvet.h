@@ -7,6 +7,7 @@ class conjvet
 private:
     int* vetor;
     int tamanhovet;
+    int tamacopia;
 
 public:
     conjvet(int);
